@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="instructionsViewModel"
+            type="com.udacity.shoestore.instructions.view.InstructionsViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/margin_top_aligment" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/margin_alignment"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_alignment" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_alignment" />
+
+        <TextView
+            android:id="@+id/instructions_title"
+            style="@style/TitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_title"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline"
+            app:layout_constraintStart_toEndOf="@id/left_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_guideline" />
+
+        <TextView
+            android:id="@+id/instructions_body"
+            style="@style/BodyLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_body"
+            android:layout_marginTop="@dimen/element_margin"
+            app:layout_constraintTop_toBottomOf="@id/instructions_title"
+            app:layout_constraintStart_toEndOf="@id/left_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_guideline" />
+
+        <Button
+            android:id="@+id/go_to_shoe_list"
+            style="@style/ButtonApp.PrimaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_to_shoe_list"
+            android:onClick="@{() -> instructionsViewModel.onActionPressed()}"
+            app:layout_constraintEnd_toStartOf="@id/right_guideline"
+            app:layout_constraintBottom_toTopOf="@id/bottom_guideline" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

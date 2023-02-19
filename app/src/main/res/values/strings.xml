@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- Login Strings -->
+    <string name="email_label">Email:</string>
+    <string name="email_hint">Email</string>
+    <string name="password_label">Password:</string>
+    <string name="password_hint">Password</string>
+    <string name="email_error_message">Something went wrong with your email</string>
+    <string name="password_error_message">Something went wrong with your password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="create_an_account">Create an Account</string>
+    <!-- Welcome Strings -->
+    <string name="welcome_fragment_title">Welcome!</string>
+    <string name="welcome_title">House of Hoops</string>
+    <string name="welcome_body">House of Hoops gives you a taste of how the 90\'s drove the court.</string>
+    <string name="welcome_instructions">To Instructions</string>
+    <string name="welcome_label">WELCOME</string>
+    <!-- Instructions Strings -->
+    <string name="instructions_fragment_title">Instructions</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis pulvinar diam vel semper. Suspendisse potenti. Proin ut arcu a lorem congue rutrum. Curabitur vitae massa vel ligula feugiat semper. Mauris consectetur massa quis tincidunt elementum. Nullam est sem, molestie eu lacus eu, semper convallis arcu.</string>
+    <string name="instructions_to_shoe_list">To Shoe List</string>
+    <!-- shoe listing string -->
+    <string name="listing_fragment_title">Catalogue</string>
+    <string name="listing_add_details">Add a Shoe</string>
+    <!-- shoe details -->
+    <string name="details_fragment_title">Details</string>
+</resources>
