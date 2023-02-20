@@ -29,7 +29,7 @@ class DetailsFragment: Fragment() {
         setupTitleBar()
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
         binding.save.setOnClickListener {
-            val action = DetailsFragmentDirections.actionDetailsFragmentToListingFragment()
+            val action = DetailsFragmentDirections.actionDetailsFragmentToListingFragment(null)
             findNavController().navigate(action)
         }
 

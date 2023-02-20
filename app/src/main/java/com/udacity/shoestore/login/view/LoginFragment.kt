@@ -30,12 +30,19 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         setupTitleBar()
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        binding.loginViewModel = viewModel
         initializeObservers()
-        setActions()
         return binding.root
     }
 
     private fun initializeObservers() {
+        viewModel.actionPressed.observe(viewLifecycleOwner, Observer { isActionPressed ->
+            if (isActionPressed) {
+                validateUser()
+                viewModel.resetActionPressed()
+            }
+        })
+
         viewModel.isEmailValid.observe(viewLifecycleOwner, Observer { isValid ->
             if (isValid) {
                 binding.emailError.setGone()
@@ -60,22 +67,12 @@ class LoginFragment : Fragment() {
         })
     }
 
-    private fun setActions() {
-        binding.createAnAccount.setOnClickListener {
-            user = User(
-                binding.editTextEmailAddress.text.toString(),
-                binding.editTextPassword.text.toString()
-            )
-            viewModel.validateLogin(user)
-        }
-
-        binding.signIn.setOnClickListener {
-            user = User(
-                binding.editTextEmailAddress.text.toString(),
-                binding.editTextPassword.text.toString()
-            )
-            viewModel.validateLogin(user)
-        }
+    private fun validateUser() {
+        user = User(
+            binding.editTextEmailAddress.text.toString(),
+            binding.editTextPassword.text.toString()
+        )
+        viewModel.validateLogin(user)
     }
 
     private fun goToWelcomeScreen() {

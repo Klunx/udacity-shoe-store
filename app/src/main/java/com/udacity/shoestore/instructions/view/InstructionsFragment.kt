@@ -42,7 +42,7 @@ class InstructionsFragment : Fragment() {
     }
 
     private fun goToShoeList() {
-        val action = InstructionsFragmentDirections.actionInstructionsFragmentToListingFragment()
+        val action = InstructionsFragmentDirections.actionInstructionsFragmentToListingFragment(null)
         findNavController().navigate(action)
     }
 
