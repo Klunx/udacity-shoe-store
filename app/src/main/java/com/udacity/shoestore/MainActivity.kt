@@ -10,9 +10,13 @@ import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    /*
+    https://knowledge.udacity.com/questions/804687 Diraj answer
+    private val viewModel by activityViewModels<ShoeViewModel>()
+
+     */
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
