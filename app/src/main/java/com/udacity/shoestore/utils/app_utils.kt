@@ -12,3 +12,9 @@ fun View.setGone() {
 fun View.setVisible() {
     this.visibility = View.VISIBLE
 }
+
+fun String.validateDescription(): String {
+    return this.ifEmpty {
+        "N/A"
+    }
+}

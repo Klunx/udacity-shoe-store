@@ -23,6 +23,18 @@
     <!-- shoe listing string -->
     <string name="listing_fragment_title">Catalogue</string>
     <string name="listing_add_details">Add a Shoe</string>
+    <string name="listing_empty_list_message">No shoes have been added</string>
     <!-- shoe details -->
     <string name="details_fragment_title">Details</string>
+    <string name="details_shoe_name">Shoe name</string>
+    <string name="details_shoe_name_error">Please add a shoe name</string>
+    <string name="details_company">Company</string>
+    <string name="details_error_company">Please add a Company</string>
+    <string name="details_shoe_size">Shoe size</string>
+    <string name="details_shoe_size_hint">0.0</string>
+    <string name="details_description">Description</string>
+    <string name="details_cancel">Cancel</string>
+    <string name="details_save">Save</string>
+    <!-- String format -->
+    <string name="to_double">%.1f</string>
 </resources>
