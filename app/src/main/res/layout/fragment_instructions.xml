@@ -56,7 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/instructions_body"
-            android:layout_marginTop="@dimen/element_margin"
+            android:layout_marginTop="@dimen/margin_size_x4"
             app:layout_constraintTop_toBottomOf="@id/instructions_title"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
             app:layout_constraintEnd_toStartOf="@id/right_guideline" />

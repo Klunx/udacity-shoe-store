@@ -51,12 +51,6 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <argument
-            android:name="new_shoe"
-            app:nullable="true"
-            app:argType="com.udacity.shoestore.models.Shoe"
-            />
-
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"

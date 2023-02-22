@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Catalogue
 import com.udacity.shoestore.models.Shoe
 
-class ListingViewModel(shoe: Shoe?) : ViewModel() {
+class ListingViewModel : ViewModel() {
 
     private var _shouldNavigateToDetails = MutableLiveData<Boolean>()
     val shouldNavigateToDetails: LiveData<Boolean>
