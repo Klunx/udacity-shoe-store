@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -15,12 +16,19 @@ import com.udacity.shoestore.databinding.FragmentDetailsBinding
 import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.utils.setGone
 import com.udacity.shoestore.utils.setVisible
+import com.udacity.shoestore.view.CatalogueViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ *
+ * Approach taken from:
+ * https://knowledge.udacity.com/questions/804687 Diraj answer
+ */
 class DetailsFragment: Fragment() {
 
     private lateinit var binding: FragmentDetailsBinding
     private lateinit var viewModel: DetailsViewModel
+    private val catalogueViewModel by activityViewModels<CatalogueViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,20 +73,23 @@ class DetailsFragment: Fragment() {
 
         viewModel.validSubmission.observe(viewLifecycleOwner, Observer { isValidSubmission ->
             if (isValidSubmission) {
-                navigateToListeningFragment(viewModel.newShoe.value)
+                viewModel.newShoe.value?.let {
+                    catalogueViewModel.addShoe(it)
+                }
+                navigateToListeningFragment()
             }
         })
 
         viewModel.cancelActionPressed.observe(viewLifecycleOwner, Observer { isCancelActionPressed ->
             if (isCancelActionPressed) {
-                navigateToListeningFragment(null)
+                navigateToListeningFragment()
             }
         })
     }
 
 
-    private fun navigateToListeningFragment(shoe: Shoe?) {
-        val action = DetailsFragmentDirections.actionDetailsFragmentToListingFragment(shoe)
+    private fun navigateToListeningFragment() {
+        val action = DetailsFragmentDirections.actionDetailsFragmentToListingFragment()
         findNavController().navigate(action)
     }
 }

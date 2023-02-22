@@ -60,4 +60,21 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="CardLayout">
+        <item name="android:background">@drawable/rounded_background_card</item>
+        <item name="android:layout_marginTop">@dimen/margin_size_x1</item>
+        <item name="android:layout_marginBottom">@dimen/margin_size_x1</item>
+        <item name="android:layout_marginLeft">@dimen/margin_size_x2</item>
+        <item name="android:layout_marginRight">@dimen/margin_size_x2</item>
+    </style>
+
+    <style name="CardText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/comfortaa_bold</item>
+    </style>
+
+    <style name="CardText.Description">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/comfortaa</item>
+    </style>
 </resources>

@@ -23,7 +23,6 @@
     <!-- shoe listing string -->
     <string name="listing_fragment_title">Catalogue</string>
     <string name="listing_add_details">Add a Shoe</string>
-    <string name="listing_empty_list_message">No shoes have been added</string>
     <!-- shoe details -->
     <string name="details_fragment_title">Details</string>
     <string name="details_shoe_name">Shoe name</string>
