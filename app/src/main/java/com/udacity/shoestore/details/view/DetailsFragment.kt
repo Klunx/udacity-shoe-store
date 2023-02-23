@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * Approach taken from:
  * https://knowledge.udacity.com/questions/804687 Diraj answer
  */
-class DetailsFragment: Fragment() {
+class DetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailsBinding
     private lateinit var viewModel: DetailsViewModel
@@ -39,13 +39,10 @@ class DetailsFragment: Fragment() {
         setupTitleBar()
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
         binding.detailsViewModel = viewModel
-        binding.shoe = Shoe("",0.0, "", "")
+        binding.shoe = Shoe("", 0.0, "", "")
         initializeObservers()
+        (activity as AppCompatActivity).toolbar.menu.clear()
         return binding.root
-    }
-
-    private fun setupTitleBar() {
-        (activity as AppCompatActivity).toolbar.title = getString(R.string.details_fragment_title)
     }
 
     private fun initializeObservers() {
@@ -80,16 +77,22 @@ class DetailsFragment: Fragment() {
             }
         })
 
-        viewModel.cancelActionPressed.observe(viewLifecycleOwner, Observer { isCancelActionPressed ->
-            if (isCancelActionPressed) {
-                navigateToListeningFragment()
-            }
-        })
+        viewModel.cancelActionPressed.observe(
+            viewLifecycleOwner,
+            Observer { isCancelActionPressed ->
+                if (isCancelActionPressed) {
+                    navigateToListeningFragment()
+                }
+            })
     }
-
 
     private fun navigateToListeningFragment() {
         val action = DetailsFragmentDirections.actionDetailsFragmentToListingFragment()
         findNavController().navigate(action)
+    }
+
+    private fun setupTitleBar() {
+        (activity as AppCompatActivity).toolbar.title =
+            getString(R.string.details_fragment_title)
     }
 }

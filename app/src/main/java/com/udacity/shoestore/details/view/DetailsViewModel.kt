@@ -19,11 +19,7 @@ class DetailsViewModel : ViewModel() {
     private val _isValidSubmission = MutableLiveData<Boolean>()
     val validSubmission: LiveData<Boolean>
         get() = _isValidSubmission
-/*
-    private val _saveActionPressed = MutableLiveData<Boolean>()
-    val saveActionPressed: LiveData<Boolean>
-        get() = _saveActionPressed
-*/
+
     private val _cancelActionPressed = MutableLiveData<Boolean>()
     val cancelActionPressed: LiveData<Boolean>
         get() = _cancelActionPressed
@@ -33,12 +29,10 @@ class DetailsViewModel : ViewModel() {
         get() = _newShoe
 
     init {
-        //_saveActionPressed.value = false
         _cancelActionPressed.value = false
     }
 
     fun onSavePressed(shoe: Shoe) {
-       // _saveActionPressed.value = true
         shoe.description = shoe.description.validateDescription()
         _newShoe.value = shoe
     }
