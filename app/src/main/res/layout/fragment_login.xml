@@ -7,6 +7,11 @@
             name="loginViewModel"
             type="com.udacity.shoestore.login.view.LoginViewModel"
             />
+
+        <variable
+            name="user"
+            type="com.udacity.shoestore.models.User"
+            />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -58,6 +63,7 @@
             android:ems="10"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
+            android:text="@={user.email}"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
             app:layout_constraintEnd_toStartOf="@id/right_guideline"
             app:layout_constraintTop_toBottomOf="@id/email_label" />
@@ -92,6 +98,7 @@
             android:ems="10"
             android:inputType="textPassword"
             android:hint="@string/password_hint"
+            android:text="@={user.password}"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
             app:layout_constraintEnd_toStartOf="@id/right_guideline"
             app:layout_constraintTop_toBottomOf="@id/password_label" />
@@ -114,7 +121,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_size_x4"
-            android:onClick="@{() -> loginViewModel.onActionPressed()}"
+            android:onClick="@{(v) -> loginViewModel.onActionPressed(user)}"
             android:text="@string/sign_in"
             app:layout_constraintEnd_toStartOf="@id/right_guideline"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
@@ -127,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_size_x4"
             android:text="@string/create_an_account"
-            android:onClick="@{() -> loginViewModel.onActionPressed()}"
+            android:onClick="@{(v) -> loginViewModel.onActionPressed(user)}"
             app:layout_constraintEnd_toStartOf="@id/right_guideline"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
             app:layout_constraintTop_toBottomOf="@id/sign_in" />

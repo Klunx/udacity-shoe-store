@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
-    private lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,17 +30,12 @@ class LoginFragment : Fragment() {
         setupTitleBar()
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginViewModel = viewModel
+        binding.user = User("", "")
         initializeObservers()
         return binding.root
     }
 
     private fun initializeObservers() {
-        viewModel.actionPressed.observe(viewLifecycleOwner, Observer { isActionPressed ->
-            if (isActionPressed) {
-                validateUser()
-                viewModel.resetActionPressed()
-            }
-        })
 
         viewModel.isEmailValid.observe(viewLifecycleOwner, Observer { isValid ->
             if (isValid) {
@@ -65,14 +59,6 @@ class LoginFragment : Fragment() {
                 viewModel.onActionCompleted()
             }
         })
-    }
-
-    private fun validateUser() {
-        user = User(
-            binding.editTextEmailAddress.text.toString(),
-            binding.editTextPassword.text.toString()
-        )
-        viewModel.validateLogin(user)
     }
 
     private fun goToWelcomeScreen() {

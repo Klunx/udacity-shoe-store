@@ -23,7 +23,8 @@ class InstructionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
         setupTitleBar()
         viewModel = ViewModelProvider(this).get(InstructionsViewModel::class.java)
         binding.instructionsViewModel = viewModel
@@ -32,8 +33,8 @@ class InstructionsFragment : Fragment() {
         return binding.root
     }
 
-    private fun initializeObservers(){
-        viewModel.navigateToShoeList.observe(viewLifecycleOwner, Observer{ navigateToShoeList ->
+    private fun initializeObservers() {
+        viewModel.navigateToShoeList.observe(viewLifecycleOwner, Observer { navigateToShoeList ->
             if (navigateToShoeList) {
                 goToShoeList()
                 viewModel.onActionCompleted()
@@ -47,6 +48,7 @@ class InstructionsFragment : Fragment() {
     }
 
     private fun setupTitleBar() {
-        (activity as AppCompatActivity).toolbar.title = getString(R.string.instructions_fragment_title)
+        (activity as AppCompatActivity).toolbar.title =
+            getString(R.string.instructions_fragment_title)
     }
 }

@@ -1,9 +1,7 @@
 package com.udacity.shoestore.listing.view
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -33,6 +31,7 @@ class ListingFragment : Fragment() {
         binding.listeningViewModel = viewModel
         binding.lifecycleOwner = this
         initializeObservers()
+        setupMenu()
         return binding.root
     }
 
@@ -56,12 +55,34 @@ class ListingFragment : Fragment() {
         })
     }
 
+    private fun setupMenu() {
+        // https://developer.android.com/guide/fragments/appbar
+        (activity as AppCompatActivity).toolbar.menu.clear()
+        (activity as AppCompatActivity).toolbar.inflateMenu(R.menu.logout_menu)
+        (activity as AppCompatActivity).toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.loginFragment -> {
+                    goToLogin()
+                    true
+                }
+                else -> false
+            }
+        }
+
+    }
+
+    private fun goToLogin() {
+        val action = ListingFragmentDirections.actionListingFragmentToLoginFragment()
+        findNavController().navigate(action)
+    }
+
     private fun goToShoeDetails() {
         val action = ListingFragmentDirections.actionListingFragmentToDetailsFragment()
         findNavController().navigate(action)
     }
 
     private fun setupTitleBar() {
-        (activity as AppCompatActivity).toolbar.title = getString(R.string.listing_fragment_title)
+        (activity as AppCompatActivity).toolbar.title =
+            getString(R.string.listing_fragment_title)
     }
 }

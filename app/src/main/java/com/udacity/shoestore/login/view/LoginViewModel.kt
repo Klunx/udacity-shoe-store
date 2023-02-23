@@ -8,10 +8,6 @@ import com.udacity.shoestore.models.User
 
 class LoginViewModel : ViewModel() {
 
-    private val _actionPressed = MutableLiveData<Boolean>()
-    val actionPressed: LiveData<Boolean>
-    get() = _actionPressed
-
     private val _isEmailValid = MutableLiveData<Boolean>()
     val isEmailValid: LiveData<Boolean>
         get() = _isEmailValid
@@ -28,7 +24,7 @@ class LoginViewModel : ViewModel() {
         resetValues()
     }
 
-    fun validateLogin(user: User) {
+    private fun validateLogin(user: User) {
         val validatingEmail = validateEmail(user.email)
         val validatingPassword = validatePassword(user.password)
         _isEmailValid.value = validatingEmail
@@ -36,8 +32,8 @@ class LoginViewModel : ViewModel() {
         _validLogin.value = (validatingPassword && validatingEmail)
     }
 
-    fun onActionPressed() {
-        _actionPressed.value = true
+    fun onActionPressed(user: User) {
+        validateLogin(user)
     }
 
     fun onActionCompleted() {
@@ -48,7 +44,6 @@ class LoginViewModel : ViewModel() {
         _isEmailValid.value = true
         _isPasswordValid.value = true
         _validLogin.value = false
-        _actionPressed.value = false
     }
 
     private fun validateEmail(email: String?): Boolean {
@@ -58,7 +53,4 @@ class LoginViewModel : ViewModel() {
     }
 
     private fun validatePassword(password: String?) = !password.isNullOrBlank()
-    fun resetActionPressed() {
-        _actionPressed.value = false
-    }
 }
