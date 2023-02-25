@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="instructionsViewModel"
@@ -48,18 +47,37 @@
             android:text="@string/instructions_title"
             app:layout_constraintTop_toBottomOf="@id/top_guideline"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
-            app:layout_constraintEnd_toStartOf="@id/right_guideline" />
+            app:layout_constraintEnd_toStartOf="@id/right_guideline"/>
 
-        <TextView
-            android:id="@+id/instructions_body"
-            style="@style/BodyLabel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/instructions_body"
-            android:layout_marginTop="@dimen/margin_size_x4"
+        <ScrollView
+            android:id="@+id/scroll_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            android:contentDescription="@string/instructions_fragment_title"
             app:layout_constraintTop_toBottomOf="@id/instructions_title"
+            app:layout_constraintEnd_toStartOf="@id/right_guideline"
             app:layout_constraintStart_toEndOf="@id/left_guideline"
-            app:layout_constraintEnd_toStartOf="@id/right_guideline" />
+            app:layout_constraintBottom_toTopOf="@id/go_to_shoe_list">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:id="@+id/instructions_body"
+                    style="@style/BodyLabel"
+                    android:layout_margin="@dimen/margin_size_x3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instructions_body" />
+            </LinearLayout>
+
+        </ScrollView>
 
         <Button
             android:id="@+id/go_to_shoe_list"
@@ -70,7 +88,6 @@
             android:onClick="@{() -> instructionsViewModel.onActionPressed()}"
             app:layout_constraintEnd_toStartOf="@id/right_guideline"
             app:layout_constraintBottom_toTopOf="@id/bottom_guideline" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

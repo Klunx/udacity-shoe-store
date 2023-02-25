@@ -1,92 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/CardLayout"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/top_guideline"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/CardLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/margin_size_x2" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/bottom_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/margin_size_x2"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/left_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/margin_size_x2" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/right_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/margin_size_x2" />
-
-        <TextView
-            android:id="@+id/shoe_name"
-            style="@style/CardText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/top_guideline"
-            app:layout_constraintEnd_toStartOf="@id/right_guideline"
-            app:layout_constraintStart_toEndOf="@id/left_guideline" />
-
-        <TextView
-            android:id="@+id/shoe_company"
-            style="@style/CardText.Description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/shoe_name"
-            app:layout_constraintStart_toEndOf="@id/left_guideline"
-            app:layout_constraintEnd_toStartOf="@id/shoe_size" />
-
-        <TextView
-            android:id="@+id/shoe_size"
-            style="@style/CardText.Description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/shoe_name"
-            app:layout_constraintEnd_toStartOf="@id/right_guideline" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrier_shoe_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:barrierMargin="8dp"
-            app:constraint_referenced_ids="shoe_size, shoe_company" />
-
-        <TextView
-            android:id="@+id/shoe_description"
-            style="@style/CardText.Description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/barrier_shoe_info"
-            app:layout_constraintStart_toEndOf="@id/left_guideline"
-            app:layout_constraintEnd_toStartOf="@id/right_guideline"
-            app:layout_constraintBottom_toTopOf="@id/bottom_guideline" />
+            >
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/margin_size_x2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/margin_size_x2"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_size_x2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_size_x2" />
+
+            <TextView
+                android:id="@+id/shoe_name"
+                style="@style/CardText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/top_guideline"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toEndOf="@id/left_guideline" />
+
+            <TextView
+                android:id="@+id/shoe_company"
+                style="@style/CardText.Description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/shoe_name"
+                app:layout_constraintStart_toEndOf="@id/left_guideline"
+                app:layout_constraintEnd_toStartOf="@id/shoe_size" />
+
+            <TextView
+                android:id="@+id/shoe_size"
+                style="@style/CardText.Description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/shoe_name"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_shoe_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:barrierMargin="8dp"
+                app:constraint_referenced_ids="shoe_size, shoe_company" />
+
+            <TextView
+                android:id="@+id/shoe_description"
+                style="@style/CardText.Description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier_shoe_info"
+                app:layout_constraintStart_toEndOf="@id/left_guideline"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintBottom_toTopOf="@id/bottom_guideline" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
