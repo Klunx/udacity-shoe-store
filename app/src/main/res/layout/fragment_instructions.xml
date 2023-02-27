@@ -61,6 +61,8 @@
             app:layout_constraintStart_toEndOf="@id/left_guideline"
             app:layout_constraintBottom_toTopOf="@id/go_to_shoe_list">
 
+            <!-- I have added the linear layout to be able to manipulate properly the margin of the component inside.
+                       That way it wouldn't overlap the button sitting at the bottom of the view. -->
             <LinearLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
