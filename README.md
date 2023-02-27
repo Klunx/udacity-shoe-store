@@ -1,5 +1,7 @@
 # Shoe Inventory App
 
+https://user-images.githubusercontent.com/13505880/221548622-7773d547-fdec-4709-9041-c3df40e657cc.mp4
+
 The Shoe Inventory App has the purpose to illustrate the usage of layouts, view layer of the model
 MVVM and data binding.
 
