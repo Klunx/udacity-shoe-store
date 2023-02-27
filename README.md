@@ -1,78 +1,77 @@
-# The Shoe Store
+# Shoe Inventory App
 
-This project will consist of five screens. You don't have to create a shoe store, you can use any other item as long as you create the following screens. You will be creating:
+The Shoe Inventory App has the purpose to illustrate the usage of layouts, view layer of the model
+MVVM and data binding.
 
-1. Login screen: Email and password fields and labels plus create and login buttons
-2. Welcome onboarding screen
-3. Instructions onboarding screen
-4. Shoe Listing screen
-5. Shoe Detail screen for adding a new shoe
+This includes features like:
+
+* Navigation.
+* Menu.
+* Variables declared in strings and dimen files.
+* Animation.
+* xml layouts.
+* Fragments loaded in a main activity.
+* Classes for fragments and view models.
+* Field validations.
 
 ## Getting Started
 
-Open the starter project in the latest stable version of Android Studio.
+1. Clone the repository or open the zip file
+3. Open codebase within Android Studio
+4. Let the project Sync all dependencies.
+5. If needed, setup an emulator.
+6. Enjoy!
 
-Open the starter project in Android Studio
+### Dependencies
 
-##Steps
+* org.jetbrains.kotlin:kotlin-stdlib-jdk7
+* androidx.fragment:fragment-ktx:1.1.0
+* androidx.appcompat:appcompat:1.2.0
+* androidx.core:core-ktx:1.3.1
+* com.google.android.material:material:1.0.0
+* androidx.constraintlayout:constraintlayout:2.0.0-rc1
+* androidx.lifecycle:lifecycle-extensions:2.2.0
+* com.jakewharton.timber:timber:4.7.1
+* android.arch.navigation:navigation-fragment-ktx
+* android.arch.navigation:navigation-ui-ktx
+* junit:junit:4.12
+* androidx.test.ext:junit:1.1.1
+* androidx.test.espresso:espresso-core:3.2.0
 
-1. Open the starter project in Android Studio
+### Installation
 
-2. Add the navigation libraries to the app build.gradle file
+1. Clone the repo.
+2. Open codebase within Android Studio
+3. Let the project Sync all dependencies.
+4. If needed, setup an emulator.
+5. Enjoy!
 
-3. Add the safe-arg plugin to the main and app build.gradle file
+## Testing
 
-4. Create a new navigation xml file
+No automated test has been implemented for this project.
 
-5. Create a new Login destination.
+### Break Down Tests
 
-   * Include email and password labels 
+All testing done so far has been manual testing against the functionality. No unit testing added.
 
-   - Include email and password fields
-   - Create buttons for creating a new login and logging in with an existing account
-   - Clicking either button should navigate to the Welcome Screen.
+## Project Instructions
 
-6. Create a new Welcome screen destination that includes:
-
-   * A new layout
-   * At least 2 textviews
-   * A navigation button with actions to navigate to the instructions screen
-
-7. Create a new Instruction destination that includes:
-
-   * A new layout
-   * At least 2 textviews
-   * A navigation button with actions to navigate to the shoe list screen
-
-8. Create a class that extends ViewModel
-
-   *  Use a LiveData field that returns the list of shoes
-
-9. Create a new Shoe List destination that includes:
-
-   * A new layout
-   * A ScrollView
-   * A LinearLayout for Shoe Items
-   * A FloatingActionButton with an action to navigate to the shoe detail screen
-
-10. In MainActivity, setup the nav controller with the toolbar and an AppBarConfiguration.
-
-11. Create a new Shoe Detail destination that includes:
-
-    * A new layout
-    * A TextView label and EditView for the
-      * Shoe Name
-      * Company
-      * Shoe Size
-      * Description
-    * A Cancel button with an action to navigate back to the shoe list screen
-    * A Save button with an action to navigate back to the shoe list screen and add a new Shoe to the Shoe View Model
-
-12. Make sure you can’t go back to onboarding screens
-
-13. In the Shoe List screen:
-
-    * Use an Activity level ViewModel to hold a list of Shoes (use by activityViewModels)
-    * Observe the shoes variable from the ViewModel
-    * Use DataBindingUtil to inflate the shoe_list layout
-    * Add a new layout item into the scrollview for each shoe.
+1. Once the project is running you will be taken to the login page.
+2. The email field validates the entry to have an email structure and that is not empty.
+3. The password field validates that the field is not left empty.
+4. Any value will do to login as long as it served the described validations before.
+5. Once you login you will be taken to the welcome page. You may navigate back or to the
+   instructions page.
+6. Once in the instructions page, you will be described how to add a new shoe to the list.
+7. You can navigate back to the welcome page from the instructions page or to the catalogue page.
+8. The catalogue page will display the list of shoes you have entered on the details page.
+9. At the beginning you will see and empty page with a floating button that will take you to the
+   details page.
+10. Once you add a Shoe in the details page, the listing in the catalogue page will display the new
+    shoe.
+11. You can navigate back from the shoe details to the catalogue page.
+12. From the catalogue page you will be able to logout or navigate back to the login page.
+ 
+## Built With
+  
+## License

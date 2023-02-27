@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
-        setupTitleBar()
+        setupScreen()
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginViewModel = viewModel
         binding.user = User("", "")
@@ -66,7 +66,8 @@ class LoginFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun setupTitleBar() {
+    private fun setupScreen() {
         (activity as AppCompatActivity).toolbar.title = ""
+        (activity as AppCompatActivity).toolbar.menu.clear()
     }
 }
