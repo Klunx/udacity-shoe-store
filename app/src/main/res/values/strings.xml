@@ -18,7 +18,7 @@
     <!-- Instructions Strings -->
     <string name="instructions_fragment_title">Instructions</string>
     <string name="instructions_title">Instructions</string>
-    <string name="instructions_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis pulvinar diam vel semper. Suspendisse potenti. Proin ut arcu a lorem congue rutrum. Curabitur vitae massa vel ligula feugiat semper. Mauris consectetur massa quis tincidunt elementum. Nullam est sem, molestie eu lacus eu, semper convallis arcu.</string>
+    <string name="instructions_body">Welcome mate!\n\nNow you will be able to start your own catalogue.\n\nHere are some steps hope you will find helpful.\n\n1. Go to the Listing view. You will see this view empty the first time.\n\n2. Click on the add button you will find floating on the Listing page.\n\n3. In the next page, you will be able to add the name, company, size and a description of the shoe. Keep in mind that the name and company are mandatory.\n\n4. Once you have added your shoe you can click save.\n\n5. Click cancel if you don\'t want to add a new shoe.\n\n6. Either option will take you back to the listing screen.\n\n7. The listing screen will display your new shoe if you have added one, if not just the previous shoes.\n\n8. You can logout from the top menu option on the logout.</string>
     <string name="instructions_to_shoe_list">To Shoe List</string>
     <!-- shoe listing string -->
     <string name="listing_fragment_title">Catalogue</string>
