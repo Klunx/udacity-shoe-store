@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--
+    This layout helps us to display the shoe details on the listing view.
+    Here I introduces barrier, this helps the field below the size and company to be aligned properly.
+-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout is aligning all the elements to the centre with the constraints, no need of another view group.
+    All the layouts have the guidelines at the bottom, top, left and right to ensure consistency in the margins.
+-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
         <variable
             name="loginViewModel"
