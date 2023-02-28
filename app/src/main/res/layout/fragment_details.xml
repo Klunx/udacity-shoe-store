@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout out stacks the fields in the middle but the buttons have a different approach.
+    This are side to side. keeping the relationship based on the previous field.
+-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
-
         <import type="com.udacity.shoestore.utils.DataBindingConverter" />
         <variable
             name="detailsViewModel"
@@ -13,7 +15,6 @@
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
     </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
